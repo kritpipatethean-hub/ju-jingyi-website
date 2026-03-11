@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="hero" className="relative h-screen overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/artistic-cloud.jpg"
+          src={`${import.meta.env.BASE_URL}images/artistic-cloud.jpg`}
           alt="Ju Jingyi"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 25%' }}

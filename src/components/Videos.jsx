@@ -1,18 +1,20 @@
 import ScrollReveal from './ScrollReveal'
 
+const base = import.meta.env.BASE_URL
+
 const videos = [
   {
-    src: '/videos/10345266260427210813.mov',
+    src: `${base}videos/10345266260427210813.mov`,
     title: 'คลิปพิเศษ #1',
     desc: 'คลิปรวมภาพจวีจิ้งอี',
   },
   {
-    src: '/videos/ScreenRecording_02-15-2569 15-07-31_1.mov',
+    src: `${base}videos/ScreenRecording_02-15-2569 15-07-31_1.mov`,
     title: 'คลิปพิเศษ #2',
     desc: 'ช่วงเวลาพิเศษของจวีจิ้งอี',
   },
   {
-    src: '/videos/ScreenRecording_02-18-2569 12-14-46_1.mov',
+    src: `${base}videos/ScreenRecording_02-18-2569 12-14-46_1.mov`,
     title: 'คลิปพิเศษ #3',
     desc: 'ไฮไลท์ผลงาน',
   },
