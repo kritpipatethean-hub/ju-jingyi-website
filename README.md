@@ -1,16 +1,40 @@
-# React + Vite
+# Ju Jingyi Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+โปรเจกต์นี้คือเว็บแฟนฮับที่สร้างด้วย React + Vite สำหรับรวมข้อมูลดาราจีน
 
-Currently, two official plugins are available:
+## สถานะปัจจุบัน
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- หน้า `/` เป็น landing page สำหรับเลือกนักแสดง
+- หน้า `/ju-jingyi` ทำเสร็จแล้วหลาย section
+- หน้า `/zhang-yunlong` ยังเป็น placeholder
 
-## React Compiler
+## คำสั่งใช้งาน
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+npm run build
+npm run lint
+```
 
-## Expanding the ESLint configuration
+## โครงสร้างที่ควรรู้
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+ju-jingyi-website/
+├─ public/
+│  ├─ images/   # รูปที่เว็บใช้จริง
+│  └─ videos/   # วิดีโอที่เว็บใช้จริง
+├─ src/
+│  ├─ components/
+│  ├─ pages/
+│  ├─ App.jsx
+│  ├─ index.css
+│  └─ main.jsx
+└─ .github/workflows/deploy.yml
+```
+
+## หมายเหตุ
+
+- asset ต้นฉบับที่ยังไม่ได้ใช้ทั้งหมด ถูกเก็บไว้นอกโปรเจกต์ที่ `../source-materials/`
+- `dist/` เป็น build output ที่สร้างใหม่ได้เสมอ จึงไม่ถูกเก็บเป็น source หลัก
+- โปรเจกต์นี้ deploy ไป GitHub Pages ผ่าน workflow ใน `.github/workflows/deploy.yml`
