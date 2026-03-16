@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import { publicAsset } from '../lib/site'
 import './ZhangYunlongPage.css'
 
-const base = import.meta.env.BASE_URL
+const zhangImage = (fileName) => publicAsset(`images/zhang-yunlong/${fileName}`)
+const zhangVideo = (fileName) => publicAsset(`videos/zhang-yunlong/${fileName}`)
 
 const sectionLinks = [
   { id: 'hero', label: 'เปิดเรื่อง' },
@@ -66,7 +68,7 @@ const spotlightRoles = [
     badge: 'จุดเปลี่ยนระดับเอเชีย',
     title: 'เฉียวฉู่เซิง',
     subtitle: 'My Roommate Is a Detective (2020)',
-    image: `${base}images/zhang-yunlong/zhang-02.jpg`,
+    image: zhangImage('zhang-02.jpg'),
     summary:
       'ตัวละครอดีตนักเลงที่ผันตัวมาเป็นสารวัตรตำรวจ ผู้มีทั้งความเด็ดขาด ความดิบ และจิตใจที่ยึดโยงกับความยุติธรรม บทนี้ทำให้จางอวิ๋นหลงถูกมองใหม่ในฐานะนักแสดงที่ควบคุมโทนอารมณ์ซับซ้อนได้อย่างหนักแน่น',
     bullets: [
@@ -80,7 +82,7 @@ const spotlightRoles = [
     badge: 'บทวิเคราะห์เชิงจิตวิทยา',
     title: 'ฉินอวิ๋นเซิง',
     subtitle: 'The Furthest Distance (2023)',
-    image: `${base}images/zhang-yunlong/zhang-03.jpg`,
+    image: zhangImage('zhang-03.jpg'),
     summary:
       'ศัลยแพทย์ทรวงอกและแพทย์ฉุกเฉินที่ซ่อนบาดแผลจากการสูญเสียไว้ลึกมาก บ้านกระจกริมทะเลกลายเป็นสัญลักษณ์ของความทรงจำ ความรู้สึกผิดของคนเป็น และการค่อย ๆ เรียนรู้ที่จะเปิดใจให้กับความรักครั้งใหม่',
     bullets: [
@@ -94,7 +96,7 @@ const spotlightRoles = [
     badge: 'ยุคโปรเจกต์พรีเมียม',
     title: 'หวังเฉวียนหงเย่',
     subtitle: 'Love in Pavilion (2025)',
-    image: `${base}images/zhang-yunlong/zhang-04.jpg`,
+    image: zhangImage('zhang-04.jpg'),
     summary:
       'โปรเจกต์ที่เอกสารต้นฉบับมองว่าเป็นไฮไลต์สำคัญของช่วง 2025 เพราะเป็นงานระดับ S-Tier ที่รวมพลังของ IP ดัง นักแสดงระดับแนวหน้า และอารมณ์แบบจีนโบราณที่ช่วยตอกย้ำความยืดหยุ่นของเขาในสายคอสตูมดราม่า',
     bullets: [
@@ -322,42 +324,42 @@ const awards = [
 
 const galleryImages = [
   {
-    src: `${base}images/zhang-yunlong/zhang-hero.jpg`,
+    src: zhangImage('zhang-hero.jpg'),
     alt: 'จางอวิ๋นหลง พอร์ตเทรตหลัก',
     caption: 'พอร์ตเทรตหลักที่ให้ภาพลักษณ์สุขุมและคมชัด',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-02.jpg`,
+    src: zhangImage('zhang-02.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 2',
     caption: 'ลุคกึ่งแฟชั่นที่ขับความนิ่งแบบนักแสดงรุ่นพี่',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-03.jpg`,
+    src: zhangImage('zhang-03.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 3',
     caption: 'โคลสอัพที่เหมาะกับโทนดราม่าและบทบาททางอารมณ์',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-04.jpg`,
+    src: zhangImage('zhang-04.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 4',
     caption: 'จังหวะภาพนิ่งที่ให้คาแรกเตอร์สุขุม ละเอียด และทันสมัย',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-05.jpg`,
+    src: zhangImage('zhang-05.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 5',
     caption: 'อีกมุมของภาพลักษณ์นักแสดงที่พร้อมไปได้หลายแนว',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-06.jpg`,
+    src: zhangImage('zhang-06.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 6',
     caption: 'งานพอร์ตเทรตที่เน้นความนิ่งและจังหวะสายตา',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-07.jpg`,
+    src: zhangImage('zhang-07.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 7',
     caption: 'เฟรมแฟชั่นที่เติมมิติความร่วมสมัยให้หน้าเว็บ',
   },
   {
-    src: `${base}images/zhang-yunlong/zhang-08.jpg`,
+    src: zhangImage('zhang-08.jpg'),
     alt: 'จางอวิ๋นหลง ภาพที่ 8',
     caption: 'ภาพปิดท้ายที่ช่วยขยายบรรยากาศของแกลเลอรีให้หลากหลาย',
   },
@@ -365,17 +367,17 @@ const galleryImages = [
 
 const videos = [
   {
-    src: `${base}videos/zhang-yunlong/zhang-01.mov`,
+    src: zhangVideo('zhang-01.mov'),
     title: 'คลิปพิเศษ #1',
     desc: 'ชุดภาพเคลื่อนไหวของจางอวิ๋นหลงในโทนอบอุ่นและละมุน',
   },
   {
-    src: `${base}videos/zhang-yunlong/zhang-02.mov`,
+    src: zhangVideo('zhang-02.mov'),
     title: 'คลิปพิเศษ #2',
     desc: 'บรรยากาศที่ดึงภาพลักษณ์ความนิ่งและเสน่ห์แบบผู้ใหญ่',
   },
   {
-    src: `${base}videos/zhang-yunlong/zhang-03.mov`,
+    src: zhangVideo('zhang-03.mov'),
     title: 'คลิปพิเศษ #3',
     desc: 'อีกหนึ่งมู้ดวิดีโอที่ช่วยให้หน้าโปรไฟล์มีจังหวะการรับชมมากขึ้น',
   },
@@ -538,7 +540,7 @@ export default function ZhangYunlongPage() {
               <div className="zy-orbit zy-orbit-two" />
               <div className="zy-portrait-panel">
                 <img
-                  src={`${base}images/zhang-yunlong/zhang-hero.jpg`}
+                  src={zhangImage('zhang-hero.jpg')}
                   alt="จางอวิ๋นหลง"
                   className="zy-portrait-image"
                 />
@@ -555,8 +557,8 @@ export default function ZhangYunlongPage() {
               </div>
 
               <div className="zy-mini-strip">
-                <img src={`${base}images/zhang-yunlong/zhang-05.jpg`} alt="จางอวิ๋นหลง มุมภาพที่ 1" />
-                <img src={`${base}images/zhang-yunlong/zhang-06.jpg`} alt="จางอวิ๋นหลง มุมภาพที่ 2" />
+                <img src={zhangImage('zhang-05.jpg')} alt="จางอวิ๋นหลง มุมภาพที่ 1" />
+                <img src={zhangImage('zhang-06.jpg')} alt="จางอวิ๋นหลง มุมภาพที่ 2" />
               </div>
             </div>
           </div>
@@ -580,7 +582,7 @@ export default function ZhangYunlongPage() {
               <ScrollReveal direction="left">
                 <div className="zy-image-stack">
                   <img
-                    src={`${base}images/zhang-yunlong/zhang-03.jpg`}
+                    src={zhangImage('zhang-03.jpg')}
                     alt="จางอวิ๋นหลง ภาพพอร์ตเทรต"
                     className="zy-image-stack-main"
                   />

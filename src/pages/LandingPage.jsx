@@ -1,36 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { actorDirectory } from '../data/actorDirectory'
 import './LandingPage.css'
-
-const baseUrl = import.meta.env.BASE_URL
-
-const actors = [
-  {
-    id: 'ju-jingyi',
-    nameTh: 'จวีจิ้งอี',
-    nameCn: '鞠婧祎',
-    nameEn: 'Ju Jingyi',
-    subtitle: 'นักแสดง · นักร้อง · ไอคอนแฟชั่น',
-    image: `${baseUrl}images/closeup-pink.jpg`,
-    path: '/ju-jingyi',
-    accentColor: '#b76e79',
-    accentGlow: 'rgba(183, 110, 121, 0.4)',
-    available: true,
-  },
-  {
-    id: 'zhang-yunlong',
-    nameTh: 'จางอวิ๋นหลง',
-    nameCn: '张云龙',
-    nameEn: 'Zhang Yunlong',
-    subtitle: 'นักแสดง · นายแบบ',
-    image: `${baseUrl}images/zhang-yunlong.jpg`,
-    path: '/zhang-yunlong',
-    accentColor: '#6e9cb7',
-    accentGlow: 'rgba(110, 156, 183, 0.4)',
-    available: true,
-  },
-]
 
 function FloatingParticles() {
   const [particles] = useState(() =>
@@ -75,6 +47,7 @@ function FloatingParticles() {
 
 function ActorCard({ actor, index }) {
   const [tapped, setTapped] = useState(false)
+  const actionLabel = actor.page ? 'ดูโปรไฟล์' : 'ดูหน้าพรีวิว'
 
   return (
     <Motion.div
@@ -83,7 +56,7 @@ function ActorCard({ actor, index }) {
       transition={{ duration: 0.7, delay: 0.8 + index * 0.2, ease: [0.16, 1, 0.3, 1] }}
       className="landing-card-wrapper"
     >
-      <Link to={actor.path} className="landing-card-link">
+      <Link to={actor.route} className="landing-card-link">
         <Motion.div
           className="landing-card"
           whileHover={{ scale: 1.03, y: -6 }}
@@ -127,7 +100,7 @@ function ActorCard({ actor, index }) {
             <p className="landing-card-name-cn">{actor.nameCn}</p>
 
             <div className="landing-card-action">
-              <span>ดูโปรไฟล์</span>
+              <span>{actionLabel}</span>
               <Motion.svg
                 className="landing-card-arrow"
                 fill="none"
@@ -221,8 +194,8 @@ export default function LandingPage() {
         <AnimatePresence>
           {showContent && (
             <div className="landing-cards-grid">
-              {actors.map((actor, i) => (
-                <ActorCard key={actor.id} actor={actor} index={i} />
+              {actorDirectory.map((actor, i) => (
+                <ActorCard key={actor.slug} actor={actor} index={i} />
               ))}
             </div>
           )}

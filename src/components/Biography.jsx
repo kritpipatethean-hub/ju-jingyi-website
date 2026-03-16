@@ -1,4 +1,5 @@
 import ScrollReveal from './ScrollReveal'
+import { publicAsset } from '../lib/site'
 
 const stats = [
   { label: 'วันเกิด', value: '18 มิ.ย. 1994' },
@@ -28,7 +29,7 @@ export default function Biography() {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-rose-gold/20 to-soft-gold/20 rounded-3xl blur-2xl" />
               <img
-                src={`${import.meta.env.BASE_URL}images/closeup-pink.jpg`}
+                src={publicAsset('images/closeup-pink.jpg')}
                 alt="จวีจิ้งอี"
                 className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-rose-gold/10 object-cover aspect-[3/4]"
               />

@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import { motion as Motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
-
-const base = import.meta.env.BASE_URL
+import { publicAsset } from '../lib/site'
 
 const images = [
-  { src: `${base}images/artistic-cloud.jpg`, alt: 'จวีจิ้งอี - ลุคศิลปะเมฆ', desc: 'แฟชั่นถ่ายแบบ - ลุคอาร์ตติสติก' },
-  { src: `${base}images/fred-red.jpg`, alt: 'จวีจิ้งอี - Fred Jewelry Red', desc: 'แคมเปญ Fred Jewelry - ชุดแดง' },
-  { src: `${base}images/fred-black.jpg`, alt: 'จวีจิ้งอี - Fred Jewelry Black', desc: 'แคมเปญ Fred Jewelry - ชุดดำ' },
-  { src: `${base}images/closeup-pink.jpg`, alt: 'จวีจิ้งอี - โคลสอัพ', desc: 'บิวตี้ช็อต - ลุคธรรมชาติ' },
-  { src: `${base}images/traditional.jpg`, alt: 'จวีจิ้งอี - ชุดจีน', desc: 'ถ่ายแบบลุคจีนดั้งเดิม' },
-  { src: `${base}images/lavender.jpg`, alt: 'จวีจิ้งอี - ลาเวนเดอร์', desc: 'แฟชั่นช็อต - ชุดลาเวนเดอร์' },
+  { src: publicAsset('images/artistic-cloud.jpg'), alt: 'จวีจิ้งอี - ลุคศิลปะเมฆ', desc: 'แฟชั่นถ่ายแบบ - ลุคอาร์ตติสติก' },
+  { src: publicAsset('images/fred-red.jpg'), alt: 'จวีจิ้งอี - Fred Jewelry Red', desc: 'แคมเปญ Fred Jewelry - ชุดแดง' },
+  { src: publicAsset('images/fred-black.jpg'), alt: 'จวีจิ้งอี - Fred Jewelry Black', desc: 'แคมเปญ Fred Jewelry - ชุดดำ' },
+  { src: publicAsset('images/closeup-pink.jpg'), alt: 'จวีจิ้งอี - โคลสอัพ', desc: 'บิวตี้ช็อต - ลุคธรรมชาติ' },
+  { src: publicAsset('images/traditional.jpg'), alt: 'จวีจิ้งอี - ชุดจีน', desc: 'ถ่ายแบบลุคจีนดั้งเดิม' },
+  { src: publicAsset('images/lavender.jpg'), alt: 'จวีจิ้งอี - ลาเวนเดอร์', desc: 'แฟชั่นช็อต - ชุดลาเวนเดอร์' },
 ]
 
 export default function Gallery() {

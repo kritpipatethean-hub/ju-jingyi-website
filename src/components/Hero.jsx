@@ -1,11 +1,12 @@
 import { motion as Motion } from 'framer-motion'
+import { publicAsset } from '../lib/site'
 
 export default function Hero() {
   return (
     <section id="hero" className="relative h-screen overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/artistic-cloud.jpg`}
+          src={publicAsset('images/artistic-cloud.jpg')}
           alt="Ju Jingyi"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 25%' }}

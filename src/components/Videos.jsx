@@ -1,20 +1,19 @@
 import ScrollReveal from './ScrollReveal'
-
-const base = import.meta.env.BASE_URL
+import { publicAsset } from '../lib/site'
 
 const videos = [
   {
-    src: `${base}videos/10345266260427210813.mov`,
+    src: publicAsset('videos/10345266260427210813.mov'),
     title: 'คลิปพิเศษ #1',
     desc: 'คลิปรวมภาพจวีจิ้งอี',
   },
   {
-    src: `${base}videos/ScreenRecording_02-15-2569 15-07-31_1.mov`,
+    src: publicAsset('videos/ScreenRecording_02-15-2569 15-07-31_1.mov'),
     title: 'คลิปพิเศษ #2',
     desc: 'ช่วงเวลาพิเศษของจวีจิ้งอี',
   },
   {
-    src: `${base}videos/ScreenRecording_02-18-2569 12-14-46_1.mov`,
+    src: publicAsset('videos/ScreenRecording_02-18-2569 12-14-46_1.mov'),
     title: 'คลิปพิเศษ #3',
     desc: 'ไฮไลท์ผลงาน',
   },
