@@ -3,6 +3,8 @@ import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './LandingPage.css'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const actors = [
   {
     id: 'ju-jingyi',
@@ -10,7 +12,7 @@ const actors = [
     nameCn: '鞠婧祎',
     nameEn: 'Ju Jingyi',
     subtitle: 'นักแสดง · นักร้อง · ไอคอนแฟชั่น',
-    image: '/images/closeup-pink.jpg',
+    image: `${baseUrl}images/closeup-pink.jpg`,
     path: '/ju-jingyi',
     accentColor: '#b76e79',
     accentGlow: 'rgba(183, 110, 121, 0.4)',
@@ -22,7 +24,7 @@ const actors = [
     nameCn: '张云龙',
     nameEn: 'Zhang Yunlong',
     subtitle: 'นักแสดง · นายแบบ',
-    image: '/images/zhang-yunlong.jpg',
+    image: `${baseUrl}images/zhang-yunlong.jpg`,
     path: '/zhang-yunlong',
     accentColor: '#6e9cb7',
     accentGlow: 'rgba(110, 156, 183, 0.4)',

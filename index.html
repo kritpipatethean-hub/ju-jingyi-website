@@ -2,7 +2,26 @@
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/images/closeup-pink.jpg" />
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search)
+        const redirectPath = params.get('p')
+
+        if (!redirectPath) return
+
+        const nextSearch = params.get('q')
+        const nextHash = params.get('h')
+        const basePath = window.location.pathname.replace(/\/$/, '')
+        const normalizedPath = redirectPath.startsWith('/') ? redirectPath : `/${redirectPath}`
+        const nextUrl =
+          `${basePath}${normalizedPath}` +
+          (nextSearch ? `?${nextSearch}` : '') +
+          (nextHash ? `#${nextHash}` : '')
+
+        window.history.replaceState(null, '', nextUrl)
+      })()
+    </script>
+    <link rel="icon" href="%BASE_URL%images/closeup-pink.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chinese Stars Fan Hub | แฟนฮับดาราจีน</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">

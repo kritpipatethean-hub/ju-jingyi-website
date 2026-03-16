@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      (() => {
+        const segmentsToKeep = 1
+        const { pathname, search, hash } = window.location
+        const pathSegments = pathname.split('/').filter(Boolean)
+        const baseSegments = pathSegments.slice(0, segmentsToKeep)
+        const routeSegments = pathSegments.slice(segmentsToKeep)
+        const basePath = `/${baseSegments.join('/')}`
+        const routePath = routeSegments.length > 0 ? `/${routeSegments.join('/')}` : '/'
+        const query = new URLSearchParams()
+
+        query.set('p', routePath)
+
+        if (search.length > 1) {
+          query.set('q', search.slice(1))
+        }
+
+        if (hash.length > 1) {
+          query.set('h', hash.slice(1))
+        }
+
+        window.location.replace(`${basePath}/?${query.toString()}`)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
