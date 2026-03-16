@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 export default function ScrollReveal({ children, className = '', delay = 0, direction = 'up' }) {
   const dirs = {
@@ -9,7 +9,7 @@ export default function ScrollReveal({ children, className = '', delay = 0, dire
   }
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, ...dirs[direction] }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -17,6 +17,6 @@ export default function ScrollReveal({ children, className = '', delay = 0, dire
       className={className}
     >
       {children}
-    </motion.div>
+    </Motion.div>
   )
 }

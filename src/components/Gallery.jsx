@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
 
 const base = import.meta.env.BASE_URL
@@ -30,7 +30,7 @@ export default function Gallery() {
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {images.map((img, i) => (
             <ScrollReveal key={i} delay={i * 0.08}>
-              <motion.div
+              <Motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setSelected(img)}
@@ -45,7 +45,7 @@ export default function Gallery() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-sm font-medium">{img.desc}</p>
                 </div>
-              </motion.div>
+              </Motion.div>
             </ScrollReveal>
           ))}
         </div>
@@ -53,14 +53,14 @@ export default function Gallery() {
 
       <AnimatePresence>
         {selected && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 cursor-pointer"
           >
-            <motion.div
+            <Motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -82,8 +82,8 @@ export default function Gallery() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </section>

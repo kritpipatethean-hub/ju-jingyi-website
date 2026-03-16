@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
 
 const events = [
@@ -97,7 +97,7 @@ export default function Timeline() {
                 </div>
 
                 <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 z-10">
-                  <motion.div
+                  <Motion.div
                     whileInView={{ scale: [0, 1.2, 1] }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}

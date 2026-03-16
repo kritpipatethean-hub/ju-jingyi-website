@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
 
 const awards = [
@@ -82,7 +82,7 @@ export default function Awards() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {awards.map((award, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <motion.div
+              <Motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-rose-gold/10 border border-rose-gold/5 hover:border-rose-gold/20 transition-shadow duration-500 h-full"
@@ -102,7 +102,7 @@ export default function Awards() {
                     <p className="text-xs text-midnight/50 leading-relaxed">{award.work}</p>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             </ScrollReveal>
           ))}
         </div>

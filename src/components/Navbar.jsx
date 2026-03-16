@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 const navItems = [
@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <Motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -95,11 +95,11 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </motion.nav>
+      </Motion.nav>
 
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -117,7 +117,7 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from './ScrollReveal'
 
 const dramas = [
@@ -24,7 +24,7 @@ const filters = ['ทั้งหมด', 'ซีรีส์', 'ภาพยน
 export default function Filmography() {
   const [filter, setFilter] = useState('ทั้งหมด')
   const allWorks = [...dramas, ...films].sort((a, b) => b.year - a.year)
-  const filtered = filter === 'ทั้งหมด' ? allWorks : allWorks.filter(w => w.type === filter)
+  const filtered = filter === 'ทั้งหมด' ? allWorks : allWorks.filter((w) => w.type === filter)
 
   return (
     <section id="filmography" className="py-24 sm:py-32 bg-pearl">
@@ -55,10 +55,10 @@ export default function Filmography() {
           </div>
         </ScrollReveal>
 
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <Motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((work) => (
-              <motion.div
+              <Motion.div
                 key={work.title}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -85,10 +85,10 @@ export default function Filmography() {
                   <span>บท: {work.role}</span>
                   {work.platform && <span className="text-rose-gold/60">{work.platform}</span>}
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

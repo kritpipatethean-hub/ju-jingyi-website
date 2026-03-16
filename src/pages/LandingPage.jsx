@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './LandingPage.css'
 
@@ -31,19 +31,21 @@ const actors = [
 ]
 
 function FloatingParticles() {
-  const particles = Array.from({ length: 25 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    duration: Math.random() * 8 + 6,
-    delay: Math.random() * 4,
-  }))
+  const [particles] = useState(() =>
+    Array.from({ length: 25 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      duration: Math.random() * 8 + 6,
+      delay: Math.random() * 4,
+    })),
+  )
 
   return (
     <div className="landing-particles">
       {particles.map((p) => (
-        <motion.div
+        <Motion.div
           key={p.id}
           className="landing-particle"
           style={{
@@ -73,14 +75,14 @@ function ActorCard({ actor, index }) {
   const [tapped, setTapped] = useState(false)
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.8 + index * 0.2, ease: [0.16, 1, 0.3, 1] }}
       className="landing-card-wrapper"
     >
       <Link to={actor.path} className="landing-card-link">
-        <motion.div
+        <Motion.div
           className="landing-card"
           whileHover={{ scale: 1.03, y: -6 }}
           whileTap={{ scale: 0.97 }}
@@ -97,7 +99,7 @@ function ActorCard({ actor, index }) {
 
           {/* Image */}
           <div className="landing-card-image-container">
-            <motion.img
+            <Motion.img
               src={actor.image}
               alt={actor.nameEn}
               className="landing-card-image"
@@ -109,14 +111,14 @@ function ActorCard({ actor, index }) {
 
           {/* Info */}
           <div className="landing-card-info">
-            <motion.p
+            <Motion.p
               className="landing-card-subtitle"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 + index * 0.2 }}
             >
               {actor.subtitle}
-            </motion.p>
+            </Motion.p>
 
             <h2 className="landing-card-name-th">{actor.nameTh}</h2>
 
@@ -124,7 +126,7 @@ function ActorCard({ actor, index }) {
 
             <div className="landing-card-action">
               <span>ดูโปรไฟล์</span>
-              <motion.svg
+              <Motion.svg
                 className="landing-card-arrow"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -137,15 +139,15 @@ function ActorCard({ actor, index }) {
                   strokeWidth={1.5}
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
-              </motion.svg>
+              </Motion.svg>
             </div>
           </div>
 
           {/* Shimmer effect */}
           <div className="landing-card-shimmer" />
-        </motion.div>
+        </Motion.div>
       </Link>
-    </motion.div>
+    </Motion.div>
   )
 }
 
@@ -171,47 +173,47 @@ export default function LandingPage() {
       {/* Main content */}
       <div className="landing-content">
         {/* Header */}
-        <motion.header
+        <Motion.header
           className="landing-header"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <motion.div
+          <Motion.div
             className="landing-logo"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           >
             ✦
-          </motion.div>
+          </Motion.div>
 
-          <motion.p
+          <Motion.p
             className="landing-tagline"
             initial={{ opacity: 0, letterSpacing: '0.1em' }}
             animate={{ opacity: 1, letterSpacing: '0.4em' }}
             transition={{ duration: 1.2, delay: 0.3 }}
           >
             CHINESE STARS FAN HUB
-          </motion.p>
+          </Motion.p>
 
-          <motion.h1
+          <Motion.h1
             className="landing-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             เลือกดาราที่คุณรัก
-          </motion.h1>
+          </Motion.h1>
 
-          <motion.p
+          <Motion.p
             className="landing-desc"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             รวมข้อมูล ผลงาน แกลเลอรี และวิดีโอของนักแสดงจีนที่คุณชื่นชอบ
-          </motion.p>
-        </motion.header>
+          </Motion.p>
+        </Motion.header>
 
         {/* Actor Cards */}
         <AnimatePresence>
@@ -225,14 +227,14 @@ export default function LandingPage() {
         </AnimatePresence>
 
         {/* Footer hint */}
-        <motion.footer
+        <Motion.footer
           className="landing-footer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
         >
           <p>แตะที่การ์ดเพื่อเข้าสู่โปรไฟล์นักแสดง</p>
-        </motion.footer>
+        </Motion.footer>
       </div>
     </div>
   )

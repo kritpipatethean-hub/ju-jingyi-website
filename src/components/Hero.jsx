@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 export default function Hero() {
   return (
@@ -15,21 +15,21 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 h-full flex flex-col justify-end pb-20 sm:pb-32 px-6 sm:px-12 lg:px-20">
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-white/60 text-sm tracking-[0.4em] uppercase mb-4"
           >
             นักแสดง &middot; นักร้อง &middot; ไอคอนแฟชั่น
-          </motion.p>
+          </Motion.p>
 
-          <motion.h1
+          <Motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -37,9 +37,9 @@ export default function Hero() {
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             จวีจิ้งอี
-          </motion.h1>
+          </Motion.h1>
 
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
@@ -47,9 +47,9 @@ export default function Hero() {
             style={{ fontFamily: "'Noto Sans SC', sans-serif" }}
           >
             鞠婧祎
-          </motion.p>
+          </Motion.p>
 
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
@@ -57,10 +57,10 @@ export default function Hero() {
           >
             &ldquo;ไอดอลหญิงที่พบได้เพียงครั้งเดียวในรอบ 4,000 ปี&rdquo;
             &mdash; จากเวทีไอดอลสู่นักแสดงระดับแนวหน้าของจีน
-          </motion.p>
-        </motion.div>
+          </Motion.p>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -68,16 +68,16 @@ export default function Hero() {
         >
           <a href="#biography" className="flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors">
             <span className="text-xs tracking-widest">SCROLL</span>
-            <motion.div
+            <Motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-            </motion.div>
+            </Motion.div>
           </a>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )
