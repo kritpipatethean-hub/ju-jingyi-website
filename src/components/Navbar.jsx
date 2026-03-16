@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const navItems = [
   { label: 'หน้าแรก', href: '#hero' },
@@ -36,18 +37,31 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <a href="#hero" className="flex items-center gap-2 group">
-              <span className={`text-lg lg:text-xl font-bold tracking-wider transition-colors ${
-                scrolled ? 'text-rose-gold' : 'text-white'
-              }`}>
-                鞠婧祎
-              </span>
-              <span className={`hidden sm:inline text-xs tracking-[0.3em] uppercase transition-colors ${
-                scrolled ? 'text-midnight/60' : 'text-white/70'
-              }`}>
-                Ju Jingyi
-              </span>
-            </a>
+            <div className="flex items-center gap-3">
+              <Link
+                to="/"
+                className={`flex items-center gap-1 text-xs tracking-wide transition-colors ${
+                  scrolled ? 'text-rose-gold/70 hover:text-rose-gold' : 'text-white/50 hover:text-white/80'
+                }`}
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                หน้าหลัก
+              </Link>
+              <a href="#hero" className="flex items-center gap-2 group">
+                <span className={`text-lg lg:text-xl font-bold tracking-wider transition-colors ${
+                  scrolled ? 'text-rose-gold' : 'text-white'
+                }`}>
+                  鞠婧祎
+                </span>
+                <span className={`hidden sm:inline text-xs tracking-[0.3em] uppercase transition-colors ${
+                  scrolled ? 'text-midnight/60' : 'text-white/70'
+                }`}>
+                  Ju Jingyi
+                </span>
+              </a>
+            </div>
 
             <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (

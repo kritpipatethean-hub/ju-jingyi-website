@@ -1,29 +1,15 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Biography from './components/Biography'
-import Timeline from './components/Timeline'
-import Filmography from './components/Filmography'
-import Music from './components/Music'
-import Awards from './components/Awards'
-import Gallery from './components/Gallery'
-import Videos from './components/Videos'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import JuJingyiPage from './pages/JuJingyiPage'
+import ZhangYunlongPage from './pages/ZhangYunlongPage'
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Biography />
-      <Timeline />
-      <Filmography />
-      <Music />
-      <Awards />
-      <Gallery />
-      <Videos />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/ju-jingyi" element={<JuJingyiPage />} />
+      <Route path="/zhang-yunlong" element={<ZhangYunlongPage />} />
+    </Routes>
   )
 }
 
